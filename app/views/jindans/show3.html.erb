@@ -1,0 +1,43 @@
+<html>
+	<body>
+	    <!-- Header -->
+		<header id="header">
+		  <a href="index.html" class="logo"><strong>Finco</strong></a>
+		</header><br>
+     <h1>진단하기</h1>
+     <h3>사진 진단</h3>
+     <h4>Finco 컬러 전문가의 진단을 위해 사진을 업로드 해주세요!</h4>
+     <br>
+     <h5>*조건: 오후 2-3시 자연광 아래 기본 카메라로 찍은 정면 사진</h5>
+     <h5>사진파일은 아이폰 촬영본만 가능합니다.</h5>
+     <h5>사진은 얼굴 사진 1장과 손목 사진 1장을 찍어서 업로드 해주시면 됩니다.</h5>
+     <br><br>
+     <h4>얼굴 사진 예시</h4>
+     <li><a href="#" class="image"><%= image_tag('aa2.jpeg', width: '200')%></li><br>
+     
+     <h4>손목 사진 예시</h4>
+     <li><a href="#" class="image"><%= image_tag('11a.png', width: '300')%></li><br>
+     
+    
+    <div class="field">
+    <%= file_field_tag :image %>
+   	</div><br>
+
+		<ul class="pagination">
+		
+		<li><a href="/jindans/index" class="page ">1</a></li>
+		<li><a href="/jindans/show" class="page">2</a></li>
+		<li><a href="/jindans/show1" class="page">3</a></li>
+		<li><a href="/jindans/show2" class="page">4</a></li>
+		<li><a href="/jindans/show3" class="page active">5</a></li>
+	     <li><a href="/jindans/show4" class="button">제출</a></li>
+		</ul>
+     
+		<footer id="footer">
+	     <p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+		</footer>
+     
+     
+     
+     </body>
+</html>

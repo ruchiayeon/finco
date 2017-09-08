@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>FINCO</title>
+		<meta charset="utf-8" />
+		<%= csrf_meta_tags %> 
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+		
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+    	<!-- Main -->
+    		<div id="main">
+    			<div class="inner">
+            <%= yield %>
+          </div>
+    		</div>
+
+        
+    	<!-- Sidebar -->
+    		<div id="sidebar">
+    			<div class="inner">
+    
+    				<!-- Search -->
+    					<section id="search" class="alt">
+    						<form method="post" action="#">
+    							<input type="text" name="query" id="query" placeholder="Search" />
+    						</form>
+    					</section>
+    
+    				<!-- Menu -->
+    					<nav id="menu">
+    						<header class="major">
+    							<h2>Menu</h2>
+    						</header>
+    						<ul>
+    							<li><a href="/">Homepage</a></li>
+    							<li>
+    								<span class="opener">My page</span>
+    								<ul>
+    								  <% if user_signed_in? %>
+    									<li><a href="#" class="image"><img src="<%= current_user.avatar %>" style="width:100%" alt="" /></a></li>
+    									<% end %>
+    									<li><a href="/jindans/index">진단하기</a></li>
+    									 <li><% if user_signed_in? %>
+                           <%= link_to '로그아웃', destroy_user_session_path, method: 'delete' %>
+                             <% else %>
+                            <%= link_to '로그인', new_user_session_path %>
+                            <%= link_to '회원가입', new_user_registration_path %>
+                            <% end %>
+
+                            <%= flash[:alert] %></li>
+    								</ul>
+    							</li>
+    							<li>
+    								<span class="opener">Market</span>
+    								<ul>
+    									<li><a href="/markets/index">Warm</a></li>
+    									<li><a href="/markets/show">Cool</a></li>
+    								
+    								</ul>
+    							</li>
+    						</ul>
+    					</nav>
+    
+    
+    				<!-- Section -->
+    					<section>
+    						<header class="major">
+    							<h2>Info</h2>
+    						</header>
+    						<p>FINCO</p>
+    						<ul class="contact">
+    							<li class="fa-envelope-o"><a href="#">ruchia10326@gmail.com</a></li>
+    							<li class="fa-phone">010-3333-8934</li>
+    							<li class="fa-home">집이다집 어딘지 알겠냐<br/>
+    							까르극 집번호 졸립다.</li>
+    						</ul>
+    					</section>
+    
+    			
+    			</div>
+    		</div>
+    
+	  </div>
+		<!-- Scripts -->
+		<%= javascript_include_tag 'application' %> 
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="/assets/js/main.js"></script>
+	</body>
+</html>

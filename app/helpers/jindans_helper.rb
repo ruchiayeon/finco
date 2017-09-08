@@ -1,0 +1,2 @@
+module JindansHelper
+end
